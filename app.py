@@ -9,6 +9,8 @@ st.write("\n")
 st.write("\n")
 st.write("\n")
 st.write("\n")
+st.badge("Car Selection", icon="🚗", color="orange")
+
 
 #with st.container():
 #    st.subheader("Kia")
@@ -25,7 +27,16 @@ col2.subheader("Koniegsegg")
 col2.image("artifacts/images/koniegsegg.webp")
 col3.subheader("Lamborgini")
 col3.image("artifacts/images/lambor.webp")  
-st.selectbox("Pick one", ["None","Kia", "Koniegsegg","Lamborgini"],placeholder="None")
+#st.selectbox("Pick one", ["None","Kia", "Koniegsegg","Lamborgini"],placeholder="None")
+
+tab1, = st.tabs(["Car Selection"])
+
+# ✅ Tab 1 (Car selection)
+with tab1:
+    car_choice = st.radio(
+        "Select one:",
+        ["None", "Kia", "Koenigsegg", "Lamborghini"]
+    )
 
 price = st.slider("Enter Your Budget", min_value=100000, max_value=10000000,step=1000000,value=500000)
 st.write(f"Your Selected Budget is :- {price}")
